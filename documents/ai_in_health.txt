@@ -1,0 +1,25 @@
+What Is AI in Healthcare?
+AI in healthcare refers to the use of machine learning, natural language processing, deep learning and other AI technologies to enhance the experiences of both healthcare professionals and patients. The data-processing and predictive capabilities of AI enable health professionals to better manage their resources and take a more proactive approach to various aspects of healthcare. 
+
+With these technologies, doctors can then make quicker and more accurate diagnoses, health administrators can locate electronic health records faster and patients can receive more timely and personalized treatments.
+
+Examples of AI in Healthcare
+To give you a better understanding of the rapidly evolving field, we rounded up some examples and use cases of AI in healthcare.
+ 
+AI in Medical Diagnosis
+Every year, roughly 400,000 hospitalized patients suffer preventable harm, with 100,000 deaths. In light of that, the promise of improving the diagnostic process is one of AI’s most exciting healthcare applications. Incomplete medical histories and large caseloads can lead to deadly human errors. Immune to those variables, AI can predict and diagnose disease at a faster rate than most medical professionals.
+
+AI in Drug Discovery
+The drug development industry is bogged down by skyrocketing development costs and research that takes thousands of human hours. Putting each drug through clinical trials costs an estimated average of $1.3 billion, and only 10 percent of those drugs are successfully brought to market. Due to breakthroughs in technology, AI is speeding up this process by helping design drugs, predicting any side effects and identifying ideal candidates for clinical trials. 
+
+AI in Patient Experience
+AI can be used to support digital communications, offering schedule reminders, tailored health tips and suggested next steps to patients. The ability of AI to aid in health diagnoses also improves the speed and accuracy of patient visits, leading to faster and more personalized care. And efficiently providing a seamless patient experience allows hospitals, clinics and physicians to treat more patients on a daily basis. 
+
+AI in Healthcare Data Management
+Highly valuable information can sometimes get lost among the forest of trillions of data points. Additionally, the inability to connect important data points slows the development of new drugs, preventative medicine and proper diagnosis. Because of its ability to handle massive volumes of data, AI breaks down data silos and connects in minutes information that used to take years to process. This can reduce the time and costs of healthcare administrative processes, contributing to more efficient daily operations and patient experiences. 
+
+AI in Robotic Surgery
+Hospitals use AI and robots to help with everything from minimally invasive procedures to open heart surgery. Surgeons can control a robot’s mechanical arms while seated at a computer console as the robot gives the doctor a three-dimensional, magnified view of the surgical site. The surgeon then leads other team members who work closely with the robot through the entire operation. Robot-assisted surgeries have led to fewer surgery-related complications, less pain and a quicker recovery time. 
+
+Companies Using AI in Healthcare
+These are some of the companies paving the way for healthcare innovation by applying AI technology.

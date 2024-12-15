@@ -1,0 +1,63 @@
+What can AI technology in healthcare do for me?
+A report from the National Academy of Medicine identified three potential benefits of AI in healthcare: improving outcomes for both patients and clinical teams, lowering healthcare costs, and benefitting population health.
+
+From preventive screenings to diagnosis and treatment, AI is being used throughout the continuum of care today. Here are two examples:
+
+Preventive care
+Cancer screenings that use radiology, like a mammogram or lung cancer screening, can leverage AI to help produce results faster.
+
+For example, in polycystic kidney disease (PKD), researchers discovered that the size of the kidneys — specifically, an attribute known as total kidney volume — correlated with how rapidly kidney function was going to decline in the future.
+
+But assessing total kidney volume, though incredibly informative, involves analyzing dozens of kidney images, one slide after another — a laborious process that can take about 45 minutes per patient. With the innovations developed at the PKD Center at Mayo Clinic, researchers now use artificial intelligence (AI) to automate the process, generating results in a matter of seconds.
+
+Bradley J. Erickson, M.D., Ph.D., director of Mayo Clinic’s Radiology Informatics Lab, says that AI can complete time-consuming or mundane work for radiology professionals, like tracing tumors and structures, or measuring amounts of fat and muscle. “If a computer can do that first pass, that can help us a lot,” says Dr. Erickson.
+
+Risk assessment
+In a Mayo Clinic cardiology study, AI successfully identified people at risk of left ventricular dysfunction, which is the medical name for a weak heart pump, even though the individuals had no noticeable symptoms. And that’s far from the only intersection of cardiology and AI.
+
+“We have an AI model now that can incidentally say, ‘Hey, you’ve got a lot of coronary artery calcium, and you’re at high risk for a heart attack or a stroke in five or 10 years,’ ” says Bhavik Patel, M.D., M.B.A., the chief artificial intelligence officer at Mayo Clinic in Arizona.
+
+How can AI technology advance medicine and public health?
+When it comes to supporting the overall health of a population, AI can help people manage chronic illnesses themselves — think asthma, diabetes and high blood pressure — by connecting certain people with relevant screening and therapy, and reminding them to take steps in their care, such as take medication.
+
+AI also can help promote information on disease prevention online, reaching large numbers of people quickly, and even analyze text on social media to predict outbreaks. Considering the example of a widespread public health crisis, think of how these examples might have supported people during the early stages of COVID-19. For example, a study found that internet searches for terms related to COVID-19 were correlated with actual COVID-19 cases. Here, AI could have been used to predict where an outbreak would happen, and then help officials know how to best communicate and make decisions to help stop the spread.
+
+How can AI solutions assist in providing superior patient care?
+
+Discover more Healthy Aging content from articles, podcasts, to videos.
+
+View Healthy Aging
+You might think that healthcare from a computer isn’t equal to what a human can provide. That’s true in many situations, but it isn’t always the case.
+
+Studies have shown that in some situations, AI can do a more accurate job than humans. For example, AI has done a more accurate job than current pathology methods in predicting who will survive malignant mesothelioma, which is a type of cancer that impacts the internal organs. AI is used to identify colon polyps and has been shown to improve colonoscopy accuracy and diagnose colorectal cancer as accurately as skilled endoscopists can.
+
+In a study of a social media forum, most people asking healthcare questions preferred responses from an AI-powered chatbot over those from physicians, ranking the chatbot’s answers higher in quality and empathy. However, the researchers conducting this study emphasize that their results only suggest the value of such chatbots in answering patients’ questions, and recommend it be followed up with a more convincing study.
+
+How can physicians use AI and machine learning in healthcare?
+One of the key things that AI may be able to do to help healthcare professionals is save them time. For example:
+
+Keeping up with current advances. When physicians are actively participating in caring for people and other clinical duties, it can be challenging for them to keep pace with evolving technological advances that support care. AI can work with huge volumes of information — from medical journals to healthcare records — and highlight the most relevant pieces.
+Taking care of tedious work. When a healthcare professional must complete tasks like writing clinical notes or filling out forms, AI could potentially complete the task faster than traditional methods, even if revision was needed to refine the first pass AI makes.
+Despite the potential for AI to save time for healthcare professionals, AI isn’t intended to replace humans. The American Medical Association commonly refers to “augmented intelligence,” which stresses the importance of AI assisting, rather than replacing, healthcare professionals. In the case of current AI applications and technology, healthcare professionals are still needed to provide:
+
+Clinical context for the algorithms that train AI.
+Accurate and relevant information for AI to analyze.
+Translation of AI findings to be meaningful for patients.
+A helpful comparison to reiterate the collaborative nature needed between AI and humans for healthcare is that in most cases, a human pilot is still needed to fly a plane. Although technology has enabled quite a bit of automation in flying today, people are needed to make adjustments, interpret the equipment’s data, and take over in cases of emergency.
+
+What are the drawbacks of AI in healthcare?
+Despite the many exciting possibilities for AI in healthcare, there are some risks to weigh:
+
+If not properly trained, AI can lead to bias and discrimination. For example, if AI is trained on electronic health records, it is building only on people that can access healthcare and is perpetuating any human bias captured within the records.
+AI chatbots can generate medical advice that is misleading or false, which is why there’s a need for effectively regulating their use.
+Where can AI solutions take the healthcare industry next?
+As AI continues to evolve and play a more prominent role in healthcare, the need for effective regulation and use becomes more critical. That’s why Mayo Clinic is a member of Health AI Partnership, which is focused on helping healthcare organizations evaluate and implement AI effectively, equitably and safely.
+
+In terms of the possibilities for healthcare professionals to further integrate AI, Mark D. Stegall, M.D., a transplant surgeon and researcher at Mayo Clinic in Minnesota says, “I predict AI also will become an important decision-making tool for physicians.”
+
+Mayo Clinic hopes that AI could help create new ways to diagnose, treat, predict, prevent and cure disease. This might be achieved by:
+
+Selecting and matching patients with the most promising clinical trials.
+Developing and setting up remote health-monitoring devices.
+Detecting currently imperceptible conditions.
+Anticipating disease-risk years in advance.

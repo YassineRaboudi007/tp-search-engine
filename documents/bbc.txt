@@ -1,0 +1,90 @@
+Artificial intelligence (AI) technology is developing at high speed, transforming many aspects of modern life.
+
+There seem to be new announcements almost every day, with big players such as Meta, Google and ChatGPT-maker OpenAI competing to get an edge with customers.
+
+However, some experts fear it could be used for malicious purposes.
+
+What is AI and how does it work?
+AI allows computers to learn and solve problems almost like a person.
+
+AI systems are trained on huge amounts of information and learn to identify the patterns in it, in order carry out tasks such as having human-like conversation, or predicting a product an online shopper might buy.
+
+
+
+1:46
+Watch: What is artificial intelligence?
+The technology is behind the voice-controlled virtual assistants Siri and Alexa, and helps Facebook and X - formerly known as Twitter- decide which social media posts to show users.
+
+AI lets Amazon analyse customers' buying habits to recommend future purchases - and the firm also uses the technology to crack down on fake reviews.
+
+A simple guide to help you understand AI
+Bill Gates: AI most important tech advance in decades
+What are AI programs like ChatGPT and Midjourney?
+ChatGPT and Midjourney are examples of what is called "generative" AI.
+
+These programs learn from vast quantities of data, such as online text and images, to generate new content which feels like it has been made by a human.
+
+So-called chatbots - like ChatGPT - can have text conversations.
+
+Other AI programs like Midjourney can create images from simple text instructions.
+
+Generative AI can also make videos and even produce music in the style of famous musicians.
+
+But these programs sometimes generate inaccurate answers and images, and can reproduce the bias contained in their source material, such as sexism or racism.
+
+Many artists, writers and performers have warned that such AIs allow others to exploit and imitate their work without payment.
+
+The most recent people to add their names to these calls include Billie Eilish and Nicki Minaj, who are among 200 artists calling for the "predatory" use of AI in the music industry to be stopped.
+
+'Most of our friends use AI in schoolwork'
+Can you pass your degree using ChatGPT?
+Why do critics fear AI could be dangerous?
+Many experts are surprised by how quickly AI has developed, and fear its rapid growth could be dangerous. Some have even said AI research should be halted.
+
+In 2023, the UK government published a report which said AI might soon assist hackers to launch cyberattacks or help terrorists plan chemical attacks.
+
+Some experts even worry that in the future, super-intelligent AIs could make humans extinct. In May, the US-based Center for AI Safety's warning about this threat was backed by dozens of leading tech specialists.
+
+Similar fears are shared by two of the three scientists known as the godfathers of AI for their pioneering research, Geoffrey Hinton and Yoshua Bengio.
+
+But the other - Yann LeCun - dismissed the idea that a super-smart AI might take over the world as "preposterously ridiculous".
+
+Getty Images Sarah Silverman signs copies of her bookGetty Images
+US comedian Sarah Silverman is unhappy about her writing allegedly being used to train AIs
+The EU's tech chief Margrethe Vestager previously told the BBC that AI's potential to amplify bias or discrimination was a more pressing concern than futuristic fears about an AI takeover.
+
+In particular, she worries about the role AI could play in making decisions that affect people's livelihoods such as loan applications.
+
+In March, a black Uber Eats driver received a payout after "racially discriminatory" facial-recognition checks prevented him using the app, and ultimately removed his account.
+
+Others have criticised AI's environmental impact.
+
+Powerful AI systems use a lot of electricity: by 2027, one researcher suggests that collectively, they could consume each year as much as a small country like the Netherlands.
+
+What rules are in place to govern AI?
+The US and UK have signed a landmark deal to work together on testing the safety of such advanced forms of AI - the first bilateral deal of its kind.
+
+US President Joe Biden has also announced measures to deal with a range of problems that AI might cause.
+
+The UK government previously ruled out setting up a dedicated AI watchdog.
+
+But Prime Minister Rishi Sunak wants the UK to be a leader in AI safety, and the country hosted the first global summit on AI safety in 2023.
+
+Twenty eight nations at the summit - including the UK, US, the European Union and China - signed a statement about the future of AI.
+
+This acknowledges the risks that advanced AIs could be misused - for example to spread misinformation - but says they can also be a force for good.
+
+The signatories resolved to work together to ensure AI is trustworthy and safe.
+
+Can Sunak’s big summit save us from AI nightmare?
+Why making AI safe isn't as easy as you might think
+In the EU, the Artificial Intelligence Act, when it becomes law, will impose strict controls on high risk systems.
+
+Which jobs are at risk because of AI?
+A report by investment bank Goldman Sachs suggested that AI could replace the equivalent of 300 million full-time jobs across the globe.
+
+It concluded many administrative, legal, architecture, and management roles could be affected.
+
+But it also said AI could boost the global economy by 7%.
+
+And the Institute of Public Policy Research (IPPR) estimates that up to eight million workers in the UK could be at risk of losing their jobs as the tech develops.
