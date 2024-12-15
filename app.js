@@ -4,6 +4,7 @@ const path = require("path");
 const { calculateTFIDF, search, loadDocuments } = require("./processing");
 
 const app = express();
+app.use(express.json()); // Middleware to parse JSON body
 const PORT = 3000;
 
 const documentsFolder = path.join(__dirname, "documents");
@@ -13,8 +14,8 @@ if (!fs.existsSync(documentsFolder)) {
   fs.mkdirSync(documentsFolder);
 }
 
-app.get("/search", (req, res) => {
-  const query = req.query.q;
+app.post("/search", (req, res) => {
+  const { query } = req.body;
   if (!query) {
     return res.status(400).send("Query parameter 'q' is required.");
   }
