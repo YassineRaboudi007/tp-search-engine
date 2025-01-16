@@ -25,13 +25,11 @@ function calculateTFIDF(docs) {
     const tokens = preprocess(doc);
     tf[docId] = {};
 
-    const uniqueTokens = new Set(tokens);
-
     tokens.forEach((token) => {
       tf[docId][token] = (tf[docId][token] || 0) + 1;
     });
 
-    uniqueTokens.forEach((token) => {
+    Object.keys(tf[docId]).forEach((token) => {
       idf[token] = (idf[token] || 0) + 1;
     });
   });
@@ -41,32 +39,25 @@ function calculateTFIDF(docs) {
   }
 
   const tfidf = {};
+
   docs.forEach((doc, docId) => {
+    tfidf[docId] = {};
+    let sumOfSquares = 0;
+
     for (const term in tf[docId]) {
-      if (!tfidf[term]) {
-        tfidf[term] = {};
-      }
-      tfidf[term][docId] = tf[docId][term] * idf[term];
+      const tfLog = 1 + Math.log(tf[docId][term]); // Logarithmic TF
+      const tfidfValue = tfLog * idf[term];
+      tfidf[docId][term] = tfidfValue;
+      sumOfSquares += tfidfValue ** 2;
     }
+
+    // const norm = Math.sqrt(sumOfSquares);
+    // for (const term in tfidf[docId]) {
+    //   tfidf[docId][term] /= norm; // Cosine normalization
+    // }
   });
 
   return tfidf;
-}
-
-function cosineSimilarity(vectorA, vectorB) {
-  const dotProduct = Object.keys(vectorA).reduce((sum, key) => {
-    return sum + vectorA[key] * (vectorB[key] || 0);
-  }, 0);
-
-  const magnitudeA = Math.sqrt(
-    Object.values(vectorA).reduce((sum, val) => sum + val * val, 0)
-  );
-
-  const magnitudeB = Math.sqrt(
-    Object.values(vectorB).reduce((sum, val) => sum + val * val, 0)
-  );
-
-  return magnitudeA && magnitudeB ? dotProduct / (magnitudeA * magnitudeB) : 0;
 }
 
 function search(query, tfidf) {
@@ -77,13 +68,31 @@ function search(query, tfidf) {
     queryVector[token] = (queryVector[token] || 0) + 1;
   });
 
-  const docScores = {};
+  const queryWeights = {};
+  let sumOfSquares = 0;
 
   for (const term in queryVector) {
-    if (tfidf[term]) {
-      for (const docId in tfidf[term]) {
-        const termWeight = queryVector[term] * tfidf[term][docId];
-        docScores[docId] = (docScores[docId] || 0) + termWeight;
+    const tfLog = 1 + Math.log(queryVector[term]); // Logarithmic TF
+    const idfValue = Object.values(tfidf).some((doc) => term in doc)
+      ? Math.log(
+          Object.keys(tfidf).length /
+            Object.values(tfidf).filter((doc) => term in doc).length
+        )
+      : 0;
+
+    queryWeights[term] = tfLog * idfValue;
+    sumOfSquares += queryWeights[term] ** 2;
+  }
+
+  const docScores = {};
+  const norm = Math.sqrt(sumOfSquares);
+
+  for (const term in queryWeights) {
+    for (const docId in tfidf) {
+      if (tfidf[docId][term]) {
+        docScores[docId] =
+          ((docScores[docId] || 0) + queryWeights[term] * tfidf[docId][term]) /
+          norm;
       }
     }
   }
@@ -115,7 +124,6 @@ function loadDocuments(folderPath) {
 module.exports = {
   preprocess,
   calculateTFIDF,
-  cosineSimilarity,
   search,
   loadDocuments,
 };
