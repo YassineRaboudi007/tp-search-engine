@@ -14,6 +14,7 @@
     "compromise": "^14.14.3",
     "express": "^4.21.2",
     "natural": "^8.0.1",
+    "node-schedule": "^2.1.1",
     "stopword": "^3.1.3",
     "wink-nlp-utils": "^2.1.0"
   }
