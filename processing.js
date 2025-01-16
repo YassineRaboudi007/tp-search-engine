@@ -5,13 +5,13 @@ const nlp = require("compromise");
 
 function preprocess(text) {
   let doc = nlp(text);
-  doc = doc.normalize();
-  doc = doc.nouns().toSingular();
-  doc = doc.sentences().toPastTense();
+  doc = doc.normalize(); // Normalize text (lowercase, remove punctuation, expand contractions, etc.)
+  doc = doc.nouns().toSingular(); // Convert plural nouns to singular
+  doc = doc.sentences().toPastTense(); // Convert sentences to past tense
 
   let lemmatizedText = doc.text();
-  let tokens = lemmatizedText.split(/\W+/);
-  tokens = stopWords.removeStopwords(tokens);
+  let tokens = lemmatizedText.toLowerCase().split(/\W+/); // Lowercase and tokenize
+  tokens = stopWords.removeStopwords(tokens); // Remove stopwords
 
   return tokens;
 }
@@ -42,26 +42,18 @@ function calculateTFIDF(docs) {
 
   docs.forEach((doc, docId) => {
     tfidf[docId] = {};
-    let sumOfSquares = 0;
-
     for (const term in tf[docId]) {
-      const tfLog = 1 + Math.log(tf[docId][term]); // Logarithmic TF
-      const tfidfValue = tfLog * idf[term];
+      const tfValue = tf[docId][term];
+      const tfidfValue = tfValue * idf[term];
       tfidf[docId][term] = tfidfValue;
-      sumOfSquares += tfidfValue ** 2;
     }
-
-    // const norm = Math.sqrt(sumOfSquares);
-    // for (const term in tfidf[docId]) {
-    //   tfidf[docId][term] /= norm; // Cosine normalization
-    // }
   });
 
   return tfidf;
 }
 
 function search(query, tfidf) {
-  const queryTokens = preprocess(query);
+  const queryTokens = preprocess(query); // Apply the same preprocessing to query
   const queryVector = {};
 
   queryTokens.forEach((token) => {
@@ -72,7 +64,7 @@ function search(query, tfidf) {
   let sumOfSquares = 0;
 
   for (const term in queryVector) {
-    const tfLog = 1 + Math.log(queryVector[term]); // Logarithmic TF
+    const tfValue = queryVector[term];
     const idfValue = Object.values(tfidf).some((doc) => term in doc)
       ? Math.log(
           Object.keys(tfidf).length /
@@ -80,19 +72,30 @@ function search(query, tfidf) {
         )
       : 0;
 
-    queryWeights[term] = tfLog * idfValue;
+    queryWeights[term] = tfValue * idfValue;
     sumOfSquares += queryWeights[term] ** 2;
   }
 
-  const docScores = {};
   const norm = Math.sqrt(sumOfSquares);
 
-  for (const term in queryWeights) {
-    for (const docId in tfidf) {
+  const docScores = {};
+  let docNorm = 0;
+  for (const docId in tfidf) {
+    for (const term in queryWeights) {
       if (tfidf[docId][term]) {
+        docNorm += tfidf[docId][term] ** 2;
+      }
+    }
+
+    docNorm = Math.sqrt(docNorm);
+
+    for (const term in queryWeights) {
+      if (tfidf[docId][term]) {
+        console.log("queryWeights[term]", queryWeights[term] / norm);
+        console.log("tfidf[docId][term] / norm", tfidf[docId][term] / docNorm);
         docScores[docId] =
-          ((docScores[docId] || 0) + queryWeights[term] * tfidf[docId][term]) /
-          norm;
+          (docScores[docId] || 0) +
+          (queryWeights[term] / norm) * (tfidf[docId][term] / docNorm);
       }
     }
   }
