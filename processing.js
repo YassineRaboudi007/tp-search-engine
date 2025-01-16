@@ -160,88 +160,61 @@ function calculateTFIDF(docs) {
 }
 
 
-
 function search(query, tfidf) {
-  const startTime = performance.now();
-  console.log('\n🔍 Starting search...');
-  console.log(`📝 Query: "${query}"`);
+  const queryTokens = preprocess(query); // Apply the same preprocessing to query
+  const queryVector = {};
 
-  const queryTokens = preprocess(query);
-  console.log(`📊 Preprocessed query tokens: ${queryTokens.join(', ')}`);
-
-  const queryVector = new Map();
-  let queryNorm = 0;
-
-  // Build query vector and calculate norm in one pass
-  console.log('📊 Building query vector...');
-  const queryVectorStartTime = performance.now();
-
-  queryTokens.forEach(token => {
-    const count = (queryVector.get(token) || 0) + 1;
-    queryVector.set(token, count);
+  queryTokens.forEach((token) => {
+    queryVector[token] = (queryVector[token] || 0) + 1;
   });
 
-  queryVector.forEach((count, term) => {
-    const idfValue = Math.log(
-      1 + tfidf.size /
-      Array.from(tfidf.values()).filter(doc => doc.has(term)).length
-    );
-    const weight = count * idfValue;
-    queryVector.set(term, weight);
-    queryNorm += weight * weight;
-  });
+  const queryWeights = {};
+  let sumOfSquares = 0;
 
-  queryNorm = Math.sqrt(queryNorm);
-  logTimeTaken(queryVectorStartTime, '📊 Query vector construction');
+  for (const term in queryVector) {
+    const tfValue = queryVector[term];
+    const idfValue = Object.values(tfidf).some((doc) => term in doc)
+      ? Math.log(
+        Object.keys(tfidf).length /
+        Object.values(tfidf).filter((doc) => term in doc).length
+      )
+      : 0;
 
-  // Calculate similarity scores using cached document norms
-  console.log('📊 Calculating document similarities...');
-  const similarityStartTime = performance.now();
+    queryWeights[term] = tfValue * idfValue;
+    sumOfSquares += queryWeights[term] ** 2;
+  }
 
-  const scores = new Map();
-  let documentsProcessed = 0;
+  const norm = Math.sqrt(sumOfSquares);
 
-  tfidf.forEach((docVector, docId) => {
-    documentsProcessed++;
-    if (documentsProcessed % 100 === 0) {
-      console.log(`📝 Processed ${documentsProcessed}/${tfidf.size} documents`);
-    }
-
-    let score = 0;
-    const docNorm = documentVectorCache.get(docId);
-
-    queryVector.forEach((queryWeight, term) => {
-      if (docVector.has(term)) {
-        score += (queryWeight / queryNorm) * (docVector.get(term) / docNorm);
+  const docScores = {};
+  let docNorm = 0;
+  for (const docId in tfidf) {
+    for (const term in queryWeights) {
+      if (tfidf[docId][term]) {
+        docNorm += tfidf[docId][term] ** 2;
       }
-    });
-
-    if (score > 0) {
-      scores.set(docId, score);
     }
-  });
 
-  logTimeTaken(similarityStartTime, '📊 Similarity calculation');
+    docNorm = Math.sqrt(docNorm);
 
-  // Sort results
-  console.log('📊 Sorting results...');
-  const sortStartTime = performance.now();
+    for (const term in queryWeights) {
+      if (tfidf[docId][term]) {
+        console.log("queryWeights[term]", queryWeights[term] / norm);
+        console.log("tfidf[docId][term] / norm", tfidf[docId][term] / docNorm);
+        docScores[docId] =
+          (docScores[docId] || 0) +
+          (queryWeights[term] / norm) * (tfidf[docId][term] / docNorm);
+      }
+    }
+  }
 
-  const results = Array.from(scores.entries())
-    .map(([docId, score]) => ({
+  return Object.keys(docScores)
+    .map((docId) => ({
       id: parseInt(docId, 10),
-      score
+      score: docScores[docId],
     }))
+    .filter((result) => result.score > 0)
     .sort((a, b) => b.score - a.score);
-
-  logTimeTaken(sortStartTime, '📊 Results sorting');
-
-  console.log(`✓ Search complete - found ${results.length} matching documents`);
-  logTimeTaken(startTime, '📊 Total search time');
-
-  console.log(results)
-
-  return results;
 }
 
 function loadDocuments(folderPath) {
